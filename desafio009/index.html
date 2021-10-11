@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Desafio 009 do curso de HTML5 e CSS3 </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(20, 20, 20);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .block {
+            width: 40%;
+            display: inline-block;
+            padding: 1%;
+        }
+
+        img {
+            border-radius: 12px;
+            width: 45%;
+            height: 140px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+        }
+        
+        header {
+            padding: 2.5%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <header>
+                <h1>
+                    Vídeos legais para assistir
+                </h1>
+            </header>
+            <div class="container">
+                <ul>
+                    <li class="block right">
+                        <a href="course_html5.html">
+                            <img src="imagens/thumb-html.png" alt="Imagem do curso de HTML5"/>
+                        </a>
+                    </li>
+                    <li class="block left">
+                        <a href="course_js.html">
+                            <img src="imagens/thumb-js.png" alt="Imagem do curso de JavaScript"/>
+                        </a>
+                    </li>
+                    <li class="block right">
+                        <a href="course_hardware.html">
+                            <img src="imagens/thumb-hardware.png" alt="Imagem do curso de Hardware"/>                            
+                        </a>
+                    </li>
+                    <li class="block left">
+                        <a href="course_python.html">
+                            <img src="imagens/thumb-python.png" alt="Imagem do curso de Python"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
