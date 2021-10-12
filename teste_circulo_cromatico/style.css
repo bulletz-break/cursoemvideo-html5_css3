@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    padding: 2%;
+}
+
+img {
+    max-height: 350px;
+    margin: 1%;
+    border: 2px solid gray;
+}
+
+div {
+    /* border: 1px solid thistle; */
+    margin: 2%;
+    padding: 1%;
+}
