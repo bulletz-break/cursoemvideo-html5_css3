@@ -4,57 +4,168 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Cores em CSS </title>
+    <title> Gradiente CSS </title>
+    <style>
+        * {
+            height: 100%;
+        }
+
+        .body {
+            /* background-attachment: fixed; */
+            padding-bottom: 500%;
+        }
+
+        .initial {
+            background-image: radial-gradient(circle,
+            #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_1 {
+            background-image: radial-gradient(circle,
+            #3FCCB0, #4FFFDC, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_2 {
+            background-image: radial-gradient(circle,
+            #853d48, #4FFFDC, #3FCCB0, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_3 {
+            background-image: radial-gradient(circle,
+            #a02d, #4FFFDC, #3FCCB0, #853d48, #0a0c0f, #020192, #920193,
+            #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_4 {
+            background-image: radial-gradient(circle,
+            #0a0c0f, #4FFFDC, #3FCCB0, #853d48, #a02d, #020192, #920193,
+            #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_5 {
+            background-image: radial-gradient(circle,
+            #020192, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #920193,
+            #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_6 {
+           background-image: radial-gradient(circle,
+           #920193, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192,
+           #209054, #203923, #090232, #161405, #140306);
+        }
+
+        .next_7 {
+            background-image: radial-gradient(circle,
+            #209054, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #203923, #090232, #161405, #140306);
+        }
+
+        .next_8 {
+            background-image: radial-gradient(circle,
+            #203923, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #090232, #161405, #140306);
+        }
+
+        .next_9 {
+            background-image: radial-gradient(circle,
+            #090232, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #203923, #161405, #140306);
+        }
+
+        .next_10 { 
+            background-image: radial-gradient(circle,
+            #161405, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #203923, #090232, #140306);
+        }
+
+        .next_11 {
+            background-image: radial-gradient(circle,
+            #140306, #4FFFDC, #3FCCB0, #853d48, #a02d, #0a0c0f, #020192, #920193,
+            #209054, #203923, #090232, #161405);
+        }
+
+
+        /* .next_1 { CONTRÁRIO
+            background-image: radial-gradient(circle,
+            #140306, #161405, #090232, #203923, #209054, #920193, #020192,
+            #0a0c0f, #a02d, #853d48, #3FCCB0, #4FFFDC);
+        } */
+
+        /* .next_2 {
+
+        } */
+    </style>
 </head>
-<body>
+<body class="initial">
     <main>
-        <article>
+        <article class="body">
+            <h1>
+                Testando Gradiente
+            </h1>
+            <script>
+                let i=ii=0;
+                window.onload = function() {
+                    let bd = document.querySelector('body');
+                    let changeClass = true;
+                    let intervalo = setInterval(() => {
+                        if(changeClass) {
+                            i++;
+                            bd.className = `next_${i}`;
+                        }
+                        
+                        if(i >= 11) {
+                            changeClass = false;
+                            randomColors();
+                        }
+                    }, 150);
 
-            <!-- Representação por nomes -->
-            <h2 style="background-color: blue; color: white;">
-                Exemplo de cores
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur necessitatibus placeat cumque magnam, sapiente tenetur unde consectetur delectus animi maiores esse quasi rerum adipisci facilis veniam fugiat ad distinctio?
-            </p>
+                    function randomColors() {
+                        let colors = ['#4FFFDC', '#3FCCB0', '#853d48', '#a02d', '#0a0c0f', '#020192', '#920193', '#209054', '#203923', '#090232', '#161405', '#140306'];
+                        let except = [];
+                        let ind;
+                        let back_body = 'background-image: radial-gradient(closest-side, ';
+
+                        for(l=0; l < 12; l++) {
+                            ind = randomRange(0, 11, except);
+                            if(l < 11) {
+                                back_body += `${colors[ind]}, `;
+                            } else {
+                                back_body += `${colors[ind]})`;
+                            }
+                            console.log(l);
+
+
+                            except.push(ind);
+
+                            if(l >= 11) {
+                                bd.style = `${back_body}`;
+                                console.log(back_body);
+                            }
+                        }
+                    }
+
+
+                    function randomRange(min, max, except) {
+                        inExcept = false;
+                        min = Math.ceil(min);
+                        max = Math.floor(max);
+                        let number = Math.floor(Math.random() * (max - min + 1)) + min;
+                        Object.keys(except).forEach(function(index) {
+                            if(number == except[index]) {
+                                inExcept = true;
+                            }
+                        })
+                        
+                        if(inExcept) return randomRange(min, max, except); else return number;
+                    }
+                }
+            </script>
         </article>
         <article>
-
-            <!-- Representação por Hexadecimais -->
-            <h2 style="background-color: #0000ff; color: #ffffff;">
-                Exemplo de cores
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur necessitatibus placeat cumque magnam, sapiente tenetur unde consectetur delectus animi maiores esse quasi rerum adipisci facilis veniam fugiat ad distinctio?
-            </p>
-        </article>
-
-        <!-- Representação em RGB -->
-        <article>
-            <h2 style="background-color: rgb(0, 0, 255); color: rgb(255, 255, 255);">
-                Exemplo de cores
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur necessitatibus placeat cumque magnam, sapiente tenetur unde consectetur delectus animi maiores esse quasi rerum adipisci facilis veniam fugiat ad distinctio?
-            </p>
-        </article>
-        <article>
-
-            <!-- Representação em HSL -->
-            <h2 style="background-color: hsl(240, 100%, 50%); color: hsl(0, 0%, 100%);">
-                Exemplo de cores 
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur necessitatibus placeat cumque magnam, sapiente tenetur unde consectetur delectus animi maiores esse quasi rerum adipisci facilis veniam fugiat ad distinctio?
-            </p>
-        </article>
-        <article>
-            <h2 style="background-color: rgba(10, 114, 143, 0.9); color: hsl(0, 0%, 100%);">
-                Exemplo de cores
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur necessitatibus placeat cumque magnam, sapiente tenetur unde consectetur delectus animi maiores esse quasi rerum adipisci facilis veniam fugiat ad distinctio?
-            </p>
+            <h2>s</h2>
         </article>
     </main>
 </body>
