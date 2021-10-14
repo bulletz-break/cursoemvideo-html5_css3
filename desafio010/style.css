@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'android font';
+    src: url(assets/fontes/idroid.otf) format('opentype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #6BC782;
+    overflow-x: hidden;
+}
+
+header {
+    background-image: linear-gradient(to bottom, #6BC782, #213D28);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .600);
+    width: 100%;
+    padding: 1%;
+}
+
+main {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .400);
+    padding: 1%;
+    border-radius: 2px;
+}
+
+.header_title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.header_paragraph {
+    margin: auto;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 1.2em;
+    width: 35%;
+    margin-top: 1%;
+}
+
+.header_link {
+    padding: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.principal_title {
+    font-family: 'android font';
+    color: #218A3B;
+}
+
+.principal_text {
+    text-indent: 3%;
+    padding: 2% 0;
+    font-family: sans-serif;
+}
+
+.principal_subtitle {
+    font-family: 'android font';
+    background-image: linear-gradient(to right, #6BC782, white);
+    color: #218A3B;
+    text-indent: 2%;
+}
+
+#bugdroid_img {
+    display: flex;
+    justify-content: center;
+}
+
+#video {
+    text-align: center;
+    background-color: #0F3D1A;
+    width: 100%;
+}
+
+#video > iframe {
+    padding: 3%;
+    width: 90%;
+}
+
+.extra {
+    background-color: #C5EBD6;
+    border-radius: 15px;
+}
+
+.img img{
+    width: 100%;
+}
+
+.extra_list {
+    display: flex;
+    width: 70%;
+}
+
+.extra_title {
+    border-radius: 10px 10px 0px 0px;
+    background-color: #2FA866;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1%;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.extra_div {
+    padding-left: 5%;
+    flex-grow: 1;
+}
+
+.extra_text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-indent: 3%;
+    padding: 2%;
+}
+
+.extra_item_text {
+    text-decoration: underline;
+}
+
+.destaque {
+    color: #2DBD51;
+    font-weight: bold;
+}
+
+.external_link {
+    background-color: #6BC782;
+}
+
+footer {
+    padding: 1.2%;
+    background-color: black;
+}
+
+footer > p {
+    text-align: center;
+    color: white;
+}
+
+
+/* 
+1 - #0F3D1A
+2 - #6BC782
+3 - #2DBD51
+4 - #213D28
+5 - #218A3B
+
+*/
